@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         
         lrn.add( new ListRowName("sampleYarimizu"));
-        lrn.add( new ListRowName("aaa"));
+        lrn.add( new ListRowName("sampleSQLite"));
         lrn.add( new ListRowName("bbb"));
         
         Log.d("****************", lrn.toString());

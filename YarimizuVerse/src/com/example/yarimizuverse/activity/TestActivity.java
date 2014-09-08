@@ -89,7 +89,7 @@ public class TestActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					Intent dbIntent = new Intent(TestActivity.this, ShowDataBase.class);
+					Intent dbIntent = new Intent(TestActivity.this, ShowDataBaseActivity.class);
 					startActivity(dbIntent);
 				}
 			});
