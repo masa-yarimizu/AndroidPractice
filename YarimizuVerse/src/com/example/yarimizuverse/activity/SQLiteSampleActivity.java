@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class TestActivity extends Activity {
+public class SQLiteSampleActivity extends Activity {
 	
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +40,14 @@ public class TestActivity extends Activity {
 					String name = nameText.getText().toString();
 					String age = ageText.getText().toString();
 					
-					ContentValues insertValues = new ContentValues();
-					insertValues.put("name", name);
-					insertValues.put("age", age);
-					long id = db.insert("person", name, insertValues);
+					if (name.equals("")) {
+						Toast.makeText(SQLiteSampleActivity.this, "名前を入力してください", Toast.LENGTH_SHORT).show();
+					} else {
+						ContentValues insertValues = new ContentValues();
+						insertValues.put("name", name);
+						insertValues.put("age", age);
+						long id = db.insert("person", name, insertValues);
+					}
 				}
 			});
 			
@@ -57,7 +61,7 @@ public class TestActivity extends Activity {
 					String age = ageText.getText().toString();
 					
 					if (name.equals("")) {
-						Toast.makeText(TestActivity.this, "名前を入力してください", Toast.LENGTH_SHORT).show();
+						Toast.makeText(SQLiteSampleActivity.this, "名前を入力してください", Toast.LENGTH_SHORT).show();
 					} else {
 						ContentValues updateValues = new ContentValues();
 						updateValues.put("age", age);
@@ -76,7 +80,7 @@ public class TestActivity extends Activity {
 					String age = ageText.getText().toString();
 					
 					if  (name.equals("")) {
-						Toast.makeText(TestActivity.this, "名前を入力してください", Toast.LENGTH_SHORT).show();
+						Toast.makeText(SQLiteSampleActivity.this, "名前を入力してください", Toast.LENGTH_SHORT).show();
 					} else {
 						db.delete("person", "name=?", new String[] { name });
 					}
@@ -89,7 +93,7 @@ public class TestActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					Intent dbIntent = new Intent(TestActivity.this, ShowDataBaseActivity.class);
+					Intent dbIntent = new Intent(SQLiteSampleActivity.this, ShowDataBaseActivity.class);
 					startActivity(dbIntent);
 				}
 			});

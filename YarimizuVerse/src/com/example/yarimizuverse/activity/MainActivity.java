@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity {
         			Intent intent = new Intent(MainActivity.this, SampleYarimizuActivity.class);
         			startActivity(intent);
         		}else if (position == 1){
-        			Intent intent = new Intent(MainActivity.this, TestActivity.class);
+        			Intent intent = new Intent(MainActivity.this, SQLiteSampleActivity.class);
         			startActivity(intent);
         		}
         		
